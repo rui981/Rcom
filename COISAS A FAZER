@@ -16,3 +16,18 @@ Ricardo
 
 Coisas/bugs que é necessario colocar no projeto
 
+slide 17
+para o emissor/receptor
+class applicationLayer
+llopen()
+llwrite()
+llread()
+llclose
+class linkLayer
+write
+read
+classes para os pacotes
+sugestao, ter uma class pacote e extender/hiearquia das outras classes
+de pacotes set I RR
+ver os timeouts quando é recebida uma trama errada ou ela nao é enviada.
+maquina de estados tem que ser robusta o suficinte para aguentar varios tipos de merda.
