@@ -35,11 +35,11 @@ int linkLayer::llopen(char ** arg, int &fd, int status){
 	
 	struct termios oldtio,newtio;
 	   fd = open(arg[1], O_RDWR | O_NOCTTY );
-    if (fd <0) {perror(arg[1]); exit(-1); }
+    if (fd <0) {perror(arg[1]); return -1; }
 
     if ( tcgetattr(fd,&oldtio) == -1) { /* save current port settings */
       perror("tcgetattr");
-      exit(-1);
+      return -1;
     }
 
     bzero(&newtio, sizeof(newtio));
@@ -67,8 +67,32 @@ int linkLayer::llopen(char ** arg, int &fd, int status){
 
     if ( tcsetattr(fd,TCSANOW,&newtio) == -1) {
       perror("tcsetattr");
-      exit(-1);
+      return -1;
     }
 
     printf("New termios structure set\n");
+}
+
+
+int linkLayer::llwrite(int fd, unsigned char * buffer){
+	unsigned int nr;
+	nr=sizeof(buffer);
+	int res;
+	res = write(fd, buffer, nr);  
+	cout << "write return" << res<< endl;
+	return res;
+}
+
+int linkLayer::llread(int fd, unsigned char * buffer){
+	unsigned int nr;
+	int res;
+	nr=sizeof(buffer);
+	res = read(fd, buffer, nr);  
+	cout << "read return" << res<< endl;
+	return res;
+}
+
+int linkLayer::llclose(int &fd){
+	 close(fd);
+	 return 0;
 }

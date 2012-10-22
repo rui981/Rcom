@@ -32,15 +32,15 @@ int i=0;
 char estado='I';
    /////////////////////////////////////////////////////////READ////////////////////////////////////////////////// 
        /* loop for input */
-      res = read(fd,buf,5);   /* returns after 4 chars have been input */
+  //    res = read(fd,buf,5);   /* returns after 4 chars have been input */
      // buf[res]=0;               /* so we can printf... */
-      printf(":%s:%d\n", buf, res);
-	printf("res = %d\n", res);
-	printf("buff 0 = %#x\n", buf[0]);
-	printf("buff 1 = %#x\n", buf[1]);
-	printf("buff 2 = %#x\n", buf[2]);
-	printf("buff 3 = %#x\n", buf[3]);
-	printf("buff 4 = %#x\n", buf[4]);
+    //  printf(":%s:%d\n", buf, res);
+	//printf("res = %d\n", res);
+	//printf("buff 0 = %#x\n", buf[0]);
+	//printf("buff 1 = %#x\n", buf[1]);
+	//printf("buff 2 = %#x\n", buf[2]);
+	//printf("buff 3 = %#x\n", buf[3]);
+	//printf("buff 4 = %#x\n", buf[4]);
 	
 
 int counter=0;
@@ -181,6 +181,6 @@ do{
 
 //////////////////////////////////////////CLOSE///////////////////////////////////////////////
     tcsetattr(fd,TCSANOW,&oldtio);
-    close(fd);
+   
     return 0;
 }

@@ -10,6 +10,9 @@
 #include <strings.h>
 #include <string.h>
 #include <stdlib.h>
+#include <iostream>
+
+using namespace std;
 
 #define BAUDRATE B38400
 #define _POSIX_SOURCE 1 /* POSIX compliant source */
@@ -35,8 +38,11 @@ public:
 linkLayer();
 	//linkLayer(char * port, int baudrate, unsigned int sequenceNumber, unsigned int timeout, unsigned int numTransmissions,char frame[MAX_SIZE]);
 	void setFrame(char frame[MAX_SIZE]);
-	char * getFrame();
+	char * getFrame(); 
 	int llopen(char ** arg, int &fd, int status);
+	int llwrite(int fd, unsigned char * buffer);
+	int llread(int fd, unsigned char * buffer);
+	int llclose(int &fd);
 	
 };
 #endif
