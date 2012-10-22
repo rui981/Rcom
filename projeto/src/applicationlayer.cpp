@@ -7,8 +7,7 @@
 
 
 #include "applicationlayer.h"
-
-
+#include <stdlib.h>
 
 applicationLayer::applicationLayer(int fileDescriptor, int status){
 	this->fileDescriptor=fileDescriptor;
@@ -24,3 +23,6 @@ void applicationLayer::setStatus(int status){
 int applicationLayer::getStatus(){
 	return status;
 }
+
+
+
