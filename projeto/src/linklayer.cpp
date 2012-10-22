@@ -9,19 +9,19 @@
 
 
 
-linkLayer::linkLayer(char * port, int baudrate,  unsigned int timeout, unsigned int sequenceNumber, unsigned int numTransmissions, char * frame){
+linkLayer::linkLayer(char port[20], int baudrate,  unsigned int timeout, unsigned int sequenceNumber, unsigned int numTransmissions, char frame[MAX_SIZE]){
 
-	this->port=port;
+	this->port[20]=port[20];
 	this->baudrate=baudrate;
 	this->sequenceNumber=sequenceNumber;
 	this->timeout=timeout;
 	this->numTransmissions=numTransmissions;
-	this->frame=frame;
+	this->frame[MAX_SIZE]=frame[MAX_SIZE];
 }
 
 
 void linkLayer::setFrame(char frame[MAX_SIZE]){
-	this->frame=frame;
+	this->frame[MAX_SIZE]=frame[MAX_SIZE];
 }
 
 
