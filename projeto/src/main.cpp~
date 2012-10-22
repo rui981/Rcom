@@ -25,6 +25,4 @@ int main(){
 
 	cout << "pilas no cu do paulo" << endl;
 	return 0;
-
-	
 }
