@@ -34,7 +34,7 @@ char * linkLayer::getFrame(){
 int linkLayer::llopen(char ** arg, int &fd, int status){
 	
 	struct termios oldtio,newtio;
-	   fd = open(arg[1], O_RDWR | O_NOCTTY ); 
+	   fd = open(arg[1], O_RDWR | O_NOCTTY );
     if (fd <0) {perror(arg[1]); return -1; }
 
     if ( tcgetattr(fd,&oldtio) == -1) { /* save current port settings */
